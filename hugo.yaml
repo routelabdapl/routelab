@@ -1,0 +1,209 @@
+baseURL: "https://routelabdapl.github.io/routelab"
+languageCode: "en-us"
+title: "RouteLab"
+theme: hugo-profile
+canonifyURLs: true
+
+outputs:
+  home:
+    - "HTML"
+    - "RSS"
+    - "JSON"
+  page:
+    - "HTML"
+    - "RSS"
+
+Paginate: 3
+enableRobotsTXT: true
+# disqusShortname: your-disqus-shortname
+# googleAnalytics: G-MEASUREMENT_ID
+
+markup:
+  goldmark:
+    renderer:
+      unsafe: true
+
+Menus:
+  main:
+    - identifier: blog
+      name: Blog
+      title: Blog posts
+      url: /blog
+      weight: 1
+
+params:
+  title: "RouteLab"
+  description: A personal site and blog about my journey as a Network Engineer in a programmable age.
+  # staticPath: ""  # The path to serve the static files from
+  favicon: "/fav.png"
+
+  # Whether to serve bootstrap css and js files from CDN or not. Can be set to true, "css" or "js" to choose between
+  # serving both, only the css, or only the js files through the CDN. Any other value will make so that CDN is not used.
+  # Note the lack of "" in true, it should be of boolean type.
+  useBootstrapCDN: false
+
+  # If you want to load dynamically responsive images from Cloudinary
+  # This requires your images to be uploaded + hosted on Cloudinary
+  # Uncomment and change YOUR_CLOUD_NAME to the Cloud Name in your Cloudinary console
+  # cloudinary_cloud_name: "YOUR_CLOUD_NAME"
+  
+  # Whether to add mathjax support on all pages. Alternatively, you can opt-in per page by adding `mathjax: true` in the frontmatter.
+  mathjax: false
+
+  # Whether the fade animations on the home page will be enabled
+  animate: true
+
+  theme:
+    # disableThemeToggle: true
+    # defaultTheme: "light" # dark
+
+  font:
+    fontSize: 1rem # default: 1rem
+    fontWeight: 400 # default: 400
+    lineHeight: 1.5 # default: 1.5
+    textAlign: left # default: left
+
+  navbar:
+    align: ms-auto
+    brandName: "RouteLab"
+    disableSearch: false
+    # searchPlaceholder: "Search"
+    stickyNavBar:
+      enable : true
+      showOnScrollUp : true
+    menus:
+      disableAbout: false
+      disableExperience: true
+      disableEducation: true
+      disableProjects: true
+      disableAchievements: true
+      disableContact: true
+
+  # Hero
+  hero:
+    enable: true
+    intro: "Hi, my name is"
+    title: "David."
+    subtitle: "I connect things and want to teach other people about it."
+    content: "A network engineer, grown up with all the new stuff in programmability and automation, but not without learning the basics first. Come and join me on this adventure."
+    image: /about/me_hello_small.jpg
+    bottomImage:
+      enable: true
+      roundImage: true # Make hero image circular | default false
+    button:
+      enable: false
+      name: "Resume"
+      url: "#"
+      download: true
+      newPage: false
+    socialLinks:
+      fontAwesomeIcons:
+        - icon: fab fa-github
+          url: https://github.com/routelabdapl
+      #customIcons:
+      #  - icon: /fav.png
+      #    url: "https://www.credly.com/users/david-plomann/badges"
+
+  # About
+  about:
+    enable: true
+    title: "About Me"
+    image: "/about/me_cisco_live.jpg"
+    content: |-
+      I am a network engineer with a passion for automation. I studied computer science and started my journey as a network guy early in my career.
+
+      While studying I learnt a lot of things about Linux too, which I can now successfully adapt with new technologies emerging as we move into a more programmable age of network engineering.
+
+      Apart from my job I am a huge music addict. You will encounter me while listening to some heavy music most of the time. I also play guitar a bit and recently started with photography as another hobby.
+    skills:
+      enable: true
+      title: "Here are some of the things I work with:"
+      items:
+        - "Cisco SD-Access"
+        - "Cisco ACI"
+        - "Cisco IOS-XE"
+        - "Cisco NXOS"
+        - "Linux"
+        - "(Free)BSD"
+        - "Ansible"
+        - "Terraform"
+        - "GitLab"
+        - "Docker"
+        - "Python"
+
+  # Achievements
+  achievements:
+    enable: true
+    title: "Certifications"
+    items:
+      - title: Cisco Certified Network Professional Enterprise (CCNP Enterprise)
+        #content: I solved all problems with optimal solution.
+        url: https://www.credly.com/badges/dda10a7e-a38d-408e-9314-be5d3dd7cf26
+        image: /cert_plagues/ccnp_enterprise.jpg
+      - title: Cisco Certified Specialist - Enterprise Advanced Infrastructure Implementation
+        url: https://www.credly.com/badges/46a4ff3b-9910-481e-8fef-034f0764284e
+        image: /cert_plagues/specialist.jpg
+      - title: Cisco Certified Specialist - Enterprise Core
+        url: https://www.credly.com/badges/04c0433c-9df0-4b92-bebb-226ef45b7caa
+        image: /cert_plagues/specialist.jpg
+      - title: Cisco Certified Network Associate (CCNA)
+        url: https://www.credly.com/badges/1c93591f-f12f-46c7-ae17-3655fc19132c
+        image: /cert_plagues/ccna_new.jpg
+      - title: Cisco Certified DevNet Associate
+        url: https://www.credly.com/badges/2da67a9d-5269-4213-a8b4-6c6e68654741
+        image: /cert_plagues/devnet_associate.png
+      - title: GitLab Certified Git Associate
+        url: https://www.credly.com/badges/ea4241d1-a729-4caa-bc2b-14f058bf21fa
+        image: /cert_plagues/gitlab.png
+
+  #Contact
+  contact:
+    enable: false
+    # title: "Custom Name"
+    content: Got I something wrong? Do you have any feedback? I appreciate if you contact me. Just write a mail.
+    email: dapl@routelab.org
+    btnName: Mail me
+    # formspree:
+    #   enable: true # `contact.email` value will be ignored
+    #   formId: abcdefgh # Take it from your form's endpoint, like 'https://formspree.io/f/abcdefgh'
+    #   emailCaption: "Enter your email address"
+    #   messageCaption: "Enter your message here"
+
+  footer:
+    recentPosts:
+      path: "blog"
+      count: 3
+      title: Recent Posts
+      enable: true
+      disableFeaturedImage: false
+    socialNetworks:
+      github: https://github.com/routelabdapl/
+      #linkedin: https://linkedin.com
+
+  # List pages like blogs and posts
+  listPages:
+    disableFeaturedImage: false
+
+  # Single pages like blog and post
+  singlePages:
+    readTime:
+      enable: true
+      content: "min read"
+    scrollprogress:
+      enable: true
+
+  # For translations
+  terms:
+    read: "Read"
+    toc: "Table Of Contents"
+    copyright: "All rights reserved"
+    pageNotFound: "Page not found"
+    emailText: "Check out this site"
+
+  datesFormat:
+    article: "Jan 2, 2006"
+    articleList: "Jan 2, 2006"
+    articleRecent: "Jan 2, 2006"
+
+  #customScripts: -| # You can add custom scripts which will be added before </body> tag
+  #  <script type="text/javascript"><!-- any script here --></script>
